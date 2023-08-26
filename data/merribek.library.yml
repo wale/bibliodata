@@ -1,0 +1,30 @@
+name: Merri-bek Libraries
+lga:
+  - Merri-bek
+site: https://www.merri-bek.vic.gov.au/libraries/
+libraries:
+  - name: Brunswick Library
+    lga: Merri-bek
+    suburb: Brunswick
+    lat: -37.7717201
+    lng: 144.9606509
+  - name: Campbell Turnbull Library
+    lga: Merri-bek
+    suburb: Brunswick West
+    lat: -37.7542464
+    lng: 144.9458846
+  - name: Coburg Library
+    lga: Merri-bek
+    suburb: Coburg
+    lat: -37.7433607
+    lng: 144.9652601
+  - name: Fawkner Library
+    lga: Merri-bek
+    suburb: Fawkner
+    lat: -37.7024755
+    lng: 144.9699896
+  - name: Glenroy Library
+    lga: Merri-bek
+    suburb: Glenroy
+    lat: -37.7077543
+    lng: 144.9231587
