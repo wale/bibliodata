@@ -16,5 +16,15 @@ Each data file follows a strict [JSON schema](https://json-schema.org/), located
 - If you are using **Visual Studio Code**, the required configuration has already been set up for you, it will already provide the type hints, as well as error-checking.
 - If you are using **Neovim**: The plugin [SchemaStore.nvim](https://github.com/b0o/SchemaStore.nvim) will help you, as it supports both JSON and YAML.
 Any other editor may need to refer to the relevant guide.
-
-<!-- TODO: write more data here. -->
+### Field Description
+`name`: Name of the library service. (`string`)
+`lga`: Names of the [local government areas](https://en.wikipedia.org/wiki/Local_government_in_Australia) that the library operates in. (`array[string]`) <!-- TODO: make this an array | string-->
+`site`: Homepage of the library service (`url`)
+`libraries`: A list of `library` objects. (`array[Library]`)
+    - `Library`: 
+        - `name`: Official place name of the library. (`string`)
+        - `suburb`: The suburb that the library is located in. (`string`)
+        - `lga`: The local government area that the library is located in. (`string`)
+        - `site`: The page provided by the library service of the branch. (`url`)
+        - `lat`: The latitude of the location of the library. (`coordinate`)
+        - `lng`: The longitude of the location of the library. (`coordinate`)
