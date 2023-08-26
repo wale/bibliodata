@@ -47,7 +47,7 @@
         },
         "library": {
             "type": "object",
-            "required": ["name", "lga", "suburb", "lat", "lng", "site"],
+            "required": ["name", "lga", "suburb", "lat", "lng"],
             "properties": {
                 "name": {
                     "type": "string"

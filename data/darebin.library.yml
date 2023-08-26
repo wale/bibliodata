@@ -1,0 +1,25 @@
+name: Darebin Libraries
+lga:
+  - Darebin
+site: https://libraries.darebin.vic.gov.au/
+libraries:
+  - name: Fairfield Library
+    lga: Darebin
+    suburb: Fairfield
+    lat: -37.7775740
+    lng: 145.0190911
+  - name: Northcote Library
+    lga: Darebin
+    suburb: Northcote
+    lat: -37.7696589
+    lng: 145.0009515
+  - name: Preston Library
+    lga: Darebin
+    suburb: Preston
+    lat: -37.7402664
+    lng: 145.0061246
+  - name: Reservoir Library
+    lga: Darebin
+    suburb: Reservoir
+    lat: -37.7163019
+    lng: 145.0057692
