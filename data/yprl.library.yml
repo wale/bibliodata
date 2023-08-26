@@ -1,0 +1,61 @@
+name: Yarra Plenty Regional Library
+lga:
+  - Banyule
+  - Nillumbik
+  - Whittlesea
+site: https://www.yprl.vic.gov.au/locations/ivanhoe-library/
+libraries:
+  - name: Diamond Valley Library 
+    lga: Banyule
+    suburb: Greensborough
+    site: https://www.yprl.vic.gov.au/locations/diamond-valley-library/
+    lat: -37.6896385
+    lng: 145.1066799
+  - name: Eltham Library
+    lga: Nillumbik
+    suburb: Eltham
+    site: https://www.yprl.vic.gov.au/locations/eltham-library/
+    lat: -37.7160801
+    lng: 145.1433451
+  - name: Ivanhoe Library and Cultural Hub
+    lga: Banyule
+    suburb: Ivanhoe
+    lat: -37.7658533
+    lng: 145.0454698
+    site: https://www.yprl.vic.gov.au/locations/ivanhoe-library/
+  - name: Lalor Library
+    lga: Whittlesea
+    suburb: Lalor
+    site: https://www.yprl.vic.gov.au/locations/lalor-library/
+    lat: -37.6730753
+    lng: 145.0177958
+  - name: Mill Park Library
+    lga: Whittlesea
+    suburb: Mill Park
+    site: https://www.yprl.vic.gov.au/locations/mill-park-library/
+    lat: -37.6604031
+    lng: 145.0748887
+  - name: Rosanna Library (popup)
+    lga: Banyule
+    suburb: Rosanna
+    site: https://www.yprl.vic.gov.au/locations/rosanna-library-pop-up/
+    lat: -37.7430315
+    lng: 145.0656341
+  - name: Thomastown Library
+    lga: Whittlesea
+    suburb: Thomastown
+    site: https://www.yprl.vic.gov.au/locations/thomastown-library/
+    lat: -37.6790088
+    lng: 145.0068823
+  - name: Watsonia Library
+    lga: Banyule
+    suburb: Watsonia
+    site: https://www.yprl.vic.gov.au/locations/watsonia-library/
+    lat: -37.710364
+    lng: 145.083638
+  - name: Whittlesea Library
+    lga: Whittlesea
+    suburb: Whittlesea
+    site: https://www.yprl.vic.gov.au/locations/whittlesea-library/
+    lat: -37.5152576
+    lng: 145.1227105

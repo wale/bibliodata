@@ -1,0 +1,107 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "JSON Schema for Bibliodata, Wale's library data for Greater Melbourne.",
+    "description": "YAML data repository, location points of each library.",
+    "type": "object",
+    "additionalProperties": false,
+    "definitions": {
+        "lgaIdentifiers": {
+            "type": "string",
+            "enum": [
+                "Banyule",              "Boroondara",
+                "Brimbank",             "Cardinia",
+                "Casey",                "Darebin",
+                "Frankston",            "Glen Eira",
+                "Greater Dandenong",    "Hobsons Bay",
+                "Hume",                 "Kingston",
+                "Knox",                 "Manningham",
+                "Maribyrnong",          "Maroondah",
+                "Melbourne",            "Melton",
+                "Merri-bek",            "Mitchell",
+                "Monash",               "Moonee Valley",
+                "Mornington Peninsula", "Nillumbik",
+                "Port Philip",          "Stonnington",
+                "Whitehorse",           "Whittlesea",
+                "Wyndham",              "Yarra",
+                "Yarra Ranges"
+              ]              
+        },
+        "uri": {
+            "anyOf": [
+                {
+                    "format": "uri",
+                    "not": {
+                        "pattern": "(\\$)"
+                    },
+                    "type": "string"
+                }
+            ]
+        },
+        "coordinate": {
+            "anyOf": [
+                {
+                    "pattern": "^(-?\\d+(\\.\\d+)?),\\s*(-?\\d+(\\.\\d+)?)$",
+                    "type": "number"
+                }
+            ]
+        },
+        "library": {
+            "type": "object",
+            "required": ["name", "lga", "suburb", "lat", "lng", "site"],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "lga": {
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/lgaIdentifiers"
+                        }
+                    ]
+                },
+                "suburb": {
+                    "type": "string"
+                },
+                "site": {
+                    "$ref": "#/definitions/uri"
+                },
+                "lat": {
+                    "$ref": "#/definitions/coordinate"
+                },
+                "lng": {
+                    "$ref": "#/definitions/coordinate"
+                }
+            }
+        }
+    },
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the library service that this data file pertains to."
+        },
+        "lga": {
+            "type": "array",
+            "description": "The local government area(s) that this library service operates in.",
+            "items": {
+                "type": "string",
+                "allOf": [
+                    {
+                        "$ref": "#/definitions/lgaIdentifiers"
+                    }
+                ]
+            }
+        },
+        "site": {
+            "$ref": "#/definitions/uri",
+            "description": "The website of the library service."
+        },
+        "libraries": {
+            "type": "array",
+            "description": "An array of libraries run by a library service.",
+            "items": {
+                "$ref": "#/definitions/library"
+            }
+        }
+    }
+}
