@@ -24,17 +24,28 @@ Any other editor may need to refer to the relevant guide.
 `site`: Homepage of the library service (`url`)
 
 `libraries`: A list of `library` objects. (`array[Library]`)
+### Types
+`url`: A valid URL in a `string`.
+```yml
+url: https://google.com # valid
+url: google.com # invalid
+```
 
-    - `Library`: 
+`coordinate`: A valid coordinate as a floating point number.
+```yml
+lat: -37.5152576
+lng: 145.1227105
+```
 
-        - `name`: Official place name of the library. (`string`)
+`Library`: 
+- `name`: Official place name of the library. (`string`)
 
-        - `suburb`: The suburb that the library is located in. (`string`)
+- `suburb`: The suburb that the library is located in. (`string`)
 
-        - `lga`: The local government area that the library is located in. (`string`)
+- `lga`: The local government area that the library is located in. (`string`)
 
-        - `site`: The page provided by the library service of the branch. (`url`)
+- `site`: The page provided by the library service of the branch. (`url`)
 
-        - `lat`: The latitude of the location of the library. (`coordinate`)
-        
-        - `lng`: The longitude of the location of the library. (`coordinate`)
+- `lat`: The latitude of the location of the library. (`coordinate`)
+
+- `lng`: The longitude of the location of the library. (`coordinate`)
