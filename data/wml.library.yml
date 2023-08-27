@@ -1,0 +1,54 @@
+name: Whitehorse Manningham Libraries
+lga:
+  - Whitehorse
+  - Manningham
+site: https://www.wml.vic.gov.au/Home
+libraries:
+  - name: Blackburn Library
+    lga: Whitehorse
+    suburb: Blackburn
+    lat: -37.8206597
+    lng: 145.1531534
+    site: https://www.wml.vic.gov.au/Libraries-Hours/Blackburn-Library
+  - name: Box Hill Library
+    lga: Whitehorse
+    suburb: Box Hill
+    lat: -37.8187952
+    lng: 145.1279287
+    site: https://www.wml.vic.gov.au/Libraries-Hours/Box-Hill-Library
+  - name: Bulleen Library
+    lga: Manningham
+    suburb: Bulleen
+    lat: -37.7654482
+    lng: 145.0915230
+    site: https://www.wml.vic.gov.au/Libraries-Hours/Bulleen-Library
+  - name: Doncaster Library
+    lga: Manningham
+    suburb: Doncaster
+    lat: -37.7870090
+    lng: 145.1315075
+    site: https://www.wml.vic.gov.au/Libraries-Hours/Doncaster-Library
+  - name: Nunawading Library
+    lga: Whitehorse
+    suburb: Nunawading
+    lat: -37.8172945
+    lng: 145.1820532
+    site: https://www.wml.vic.gov.au/Libraries-Hours/Nunawading-Library
+  - name: The Pines Library
+    lga: Manningham
+    suburb: Doncaster East
+    lat: -37.7618601
+    lng: 145.1682523
+    site: https://www.wml.vic.gov.au/Libraries-Hours/The-Pines-Library
+  - name: Vermont South Library
+    lga: Whitehorse
+    suburb: Vermont South
+    lat: -37.8543179
+    lng: 145.1815630
+    site: https://www.wml.vic.gov.au/Libraries-Hours/Vermont-South-Library
+  - name: Warrandyte Library
+    lga: Manningham
+    suburb: Warrandyte
+    lat: -37.7376236
+    lng: 145.2197044
+    site: https://www.wml.vic.gov.au/Libraries-Hours/Warrandyte-Library
