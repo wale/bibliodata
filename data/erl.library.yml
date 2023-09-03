@@ -1,0 +1,30 @@
+name: Eastern Regional Libraries
+lga: [Knox, Maroondah, Yarra Ranges]
+site: https://www.yourlibrary.com.au
+libraries:
+  - name: Bayswater Library
+    lga: Knox
+    suburb: Bayswater
+    lat: -37.8424232
+    lng: 145.2669334
+    site: https://www.yourlibrary.com.au/locations/bayswater-library/
+  - name: Belgrave Library
+    lga: Yarra Ranges
+    suburb: Belgrave
+    lat: -37.9088503
+    lng: 145.3526961
+    site: https://www.yourlibrary.com.au/locations/belgrave-library/
+  - name: Boronia Library
+    lga: Knox
+    suburb: Boronia
+    lat: -37.8637186
+    lng: 145.2845032
+    site: https://www.yourlibrary.com.au/locations/boronia-library/
+  - name: Croydon Library
+    lga: Maroondah
+    suburb: Croydon
+    lat: -37.8003907
+    lng: 145.2820745
+    site: https://www.yourlibrary.com.au/locations/croydon-library/
+  # todo: complete ERL
+  # should reading rooms be included?
