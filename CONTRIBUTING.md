@@ -49,3 +49,14 @@ lng: 145.1227105
 - `lat`: The latitude of the location of the library. (`coordinate`)
 
 - `lng`: The longitude of the location of the library. (`coordinate`)
+
+
+## Converting to GeoJSON
+There is a script that iterates over the data folder, to create a GeoJSON-compatible file. To use it, you need to use the following command:
+```
+$ ./biblioconvert -i data/ -o libraries.geojson
+```
+This script requires Python 3.5+ and the `geojson` library installed through either `pip` or the system package manager. If you are on Windows, you can also run:
+```
+python biblioconvert -i data/ -o libraries.geojson
+```

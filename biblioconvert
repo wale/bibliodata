@@ -1,0 +1,83 @@
+#!/usr/bin/env python
+
+## A conversion script from the YAML data stored in `data/`
+## to a GeoJSON file storing point data for each library.
+## 
+## 
+## Requires Python 3.
+
+import yaml, os, argparse, logging, sys
+
+from geojson import Point, Feature, FeatureCollection, dump
+
+def load_yaml_from_dir(dir: os.DirEntry) -> list[any]:
+    """
+    Iterates over a given directory and stores the parsed YAML in a `list`.
+
+    :param dir: The directory to read. Defaults to the `data/` folder.
+    """
+    files = [i for i in os.listdir(dir)]
+    parsed = []
+    logging.info("Parsing all YAML files...")
+    for f in files:
+        try:
+            with open(f"{dir}/{f}", 'r') as read:
+                res = yaml.safe_load(read)
+                parsed.append(res)
+        except Exception as e:
+            logging.error("Could not parse all YAML files.", e)
+    return parsed
+
+# TODO: separate this function to two functions, generating points and polygons for LGAs respectively.
+def convert(parsed: list[any], file: os.PathLike):
+    """
+    Converts the given YAML data on each library to a set of points in a feature collection.
+    
+    :param parsed: The parsed YAML data as a `list`.
+    :param file: The file to write to. Defaults to `libraries.geojson`.
+    """
+    features = []
+    for p in parsed:
+        libraries = p["libraries"]
+        for l in libraries:
+            # create a point from the `lat` & `lng` variables
+            # order _has_ to be longitude BEFORE latitude
+            point = Point((l["lng"], l["lat"]))
+            feature = Feature(
+                geometry=point,
+                properties={
+                    "name": l["name"],
+                    "lga": l["lga"],
+                    "suburb": l["suburb"]
+                }
+            )
+            features.append(feature)
+    feature_coll = FeatureCollection(features)
+
+    try:
+        with open(file, 'w') as f:
+            logging.info("Dumping GeoJSON data...")
+            dump(feature_coll, f)
+    except Exception as e:
+        logging.error("Could not write GeoJSON.", e)
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(prog='biblioconvert', 
+                                     description='Converts Bibliodata YAML to GeoJSON data.', 
+                                     epilog='This tool, along with the repository (github.com/wale/bibliodata) is licensed under CC-BY-SA.')
+    parser.add_argument('-i', '--input', help="The input folder.", required=True)
+    parser.add_argument('-o', '--output', help="The output file. Defaults to `libraries.geojson`.", required=True)
+
+    args = parser.parse_args()
+
+    if len(sys.argv) == 1:
+        parser.print_help(sys.stderr)
+        sys.exit(1)
+    else:
+        try:
+            logging.info("Creating a GeoJSON file.")
+            yaml_files = load_yaml_from_dir(args.input)
+            convert(yaml_files, args.output)
+            logging.info("Created!")
+        except Exception as e:
+            logging.error("Could not run biblioconvert.", e)
