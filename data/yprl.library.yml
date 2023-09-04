@@ -15,8 +15,8 @@ libraries:
     lga: Nillumbik
     suburb: Eltham
     site: https://www.yprl.vic.gov.au/locations/eltham-library/
-    lat: -37.7160801
-    lng: 145.1433451
+    lat: -37.7160536
+    lng: 145.1459363
   - name: Ivanhoe Library and Cultural Hub
     lga: Banyule
     suburb: Ivanhoe
