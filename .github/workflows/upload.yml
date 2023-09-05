@@ -1,0 +1,25 @@
+name: Push GeoJSON to CDN
+
+on:
+    push:
+
+jobs:
+    upload:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-python@v4
+              with:
+                    python-version: '3.10'
+            - run: pip install PyYAML geojson
+            - run: mkdir -p "$RUNNER_TEMP/geojson/"
+            - run: ./biblioconvert -i data/ -o "$RUNNER_TEMP/geojson/libraries-$GITHUB_SHA.geojson"
+            - name: Minio Deploy
+              uses: lovellfelix/minio-deploy-action@v1.1.1
+              with:
+                endpoint: ${{ secrets.MINIO_ENDPOINT }}
+                access_key: ${{ secrets.MINIO_ACCESS_KEY }}
+                secret_key: ${{ secrets.MINIO_SECRET_KEY }}
+                bucket: 'wale'
+                source_dir: 'public'
+                target_dir: '/lib/data'
