@@ -21,5 +21,5 @@ jobs:
                 access_key: ${{ secrets.MINIO_ACCESS_KEY }}
                 secret_key: ${{ secrets.MINIO_SECRET_KEY }}
                 bucket: 'wale'
-                source_dir: '${{ runner.temp }}/geojson'
+                source_dir: '${{ runner.temp }}/geojson/'
                 target_dir: '/lib/data'
